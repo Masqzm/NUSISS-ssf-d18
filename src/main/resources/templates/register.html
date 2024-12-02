@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Register</h1>
+
+    <form method="POST" action="/register" data-th-object="${person}">
+        <table>
+            <tr>
+                <td>Full Name</td> 
+                <td>
+                    <input type="text" data-th-field="*{fullName}">
+                    <span 
+                        data-th-if="${#fields.hasErrors('fullName')}"
+                        data-th-errors="*{fullName}" 
+                        data-th-errorclass="error">
+                    </span>
+                </td> 
+            </tr>
+            <tr>
+                <td>Email</td> 
+                <td>
+                    <input type="text" data-th-field="*{email}">
+                    <span 
+                        data-th-if="${#fields.hasErrors('email')}"
+                        data-th-errors="*{email}" 
+                        data-th-errorclass="error">
+                    </span>
+                </td> 
+            </tr>
+            <tr>
+                <td>Postal Code</td> 
+                <td>
+                    <input type="number" data-th-field="*{postalCode}">
+                    <span 
+                        data-th-if="${#fields.hasErrors('postalCode')}"
+                        data-th-errors="*{postalCode}" 
+                        data-th-errorclass="error">
+                    </span>
+                </td> 
+            </tr>
+            <tr>
+                <td>Phone No.</td> 
+                <td>
+                    <input type="text" data-th-field="*{phoneNumber}">
+                    <span 
+                        data-th-if="${#fields.hasErrors('phoneNumber')}"
+                        data-th-errors="*{phoneNumber}" 
+                        data-th-errorclass="error">
+                    </span>
+                </td> 
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

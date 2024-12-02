@@ -1,4 +1,18 @@
-tr, td {
+button {
+    float: right;
+    margin-top: 10px;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.error {
+    color: darkred;
+    font-size: .8em;
+    font-family: monospace;
+}
+
+
+/* tr, td {
     border: solid 2px;
     padding: 5px;
 }
@@ -14,4 +28,4 @@ table {
 
 #title {
     text-align: center;
-}
+} */
