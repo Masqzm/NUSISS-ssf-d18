@@ -5,3 +5,4 @@ Dockerfile
 .gitattributes
 HELP.md
 mvnw.cmd
+readme.md

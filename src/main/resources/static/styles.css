@@ -1,0 +1,17 @@
+tr, td {
+    border: solid 2px;
+    padding: 5px;
+}
+thead {
+    font-weight: bold;
+    padding: 5px;
+    background-color: lightblue;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#title {
+    text-align: center;
+}
