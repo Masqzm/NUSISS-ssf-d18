@@ -38,3 +38,6 @@ ENV SERVER_PORT=1234
 EXPOSE ${SERVER_PORT}
 
 ENTRYPOINT java -jar day18.jar
+
+HEALTHCHECK --interval=30s --timeout=30s --retries=3 \
+CMD curl -s -f http://localhost:${SERVER_PORT}/healthy || exit 1

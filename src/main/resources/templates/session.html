@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Home</title>
+</head>
+<body>
+    <h1>Sessions Test Home</h1>
+
+    <a th:href="@{/session/create}"> <button type="submit">Add session</button> </a>
+    <br>
+    <br>
+    <a th:href="@{/session/list}"> <button type="submit">List session data</button> </a>
+    <br>
+    <br>
+    <form method="POST" th:action="@{/session/clear}">
+        <button type="submit">Clear all session</button>
+        <code th:text="${status}"></code>
+    </form>
+
+</body>
+</html>

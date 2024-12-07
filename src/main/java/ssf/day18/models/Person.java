@@ -2,6 +2,13 @@ package ssf.day18.models;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+
+import java.io.StringReader;
+
+import jakarta.json.Json;
+import jakarta.json.JsonObject;
+import jakarta.json.JsonObjectBuilder;
+import jakarta.json.JsonReader;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -57,8 +64,29 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person [id=" + id + ", fullName=" + fullName + ", email=" + email + ", postalCode=" + postalCode
-                + ", phoneNumber=" + phoneNumber + "]";
+        JsonObject j = Json.createObjectBuilder()
+                    .add("id", id)
+                    .add("fullName", fullName)
+                    .add("email", email)
+                    .add("postalCode", postalCode)
+                    .add("phoneNumber", phoneNumber)
+                    .build();
+
+        return j.toString();
+    }
+
+    public static Person jsonToPerson(String json) {
+
+        JsonReader reader = Json.createReader(new StringReader(json));
+        JsonObject j = reader.readObject();
+
+        Person p = new Person(j.getInt("id"),
+                    j.getString("fullName"),
+                    j.getString("email"),
+                    j.getString("postalCode"),
+                    j.getString("phoneNumber"));
+
+        return p;
     }
 
     public static Integer getNewId() {

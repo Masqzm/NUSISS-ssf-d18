@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Display</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>
+                Name
+            </th>
+            <th>
+                DOB
+            </th>
+        </thead>
+        <tbody>
+            <tr th:each="name, iter : ${namesList}">
+                <td th:text="${name}"></td>
+                <td th:text="${dobList[iter.index]}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/session}"> <button type="submit">Back</button> </a>
+</body>
+</html>
